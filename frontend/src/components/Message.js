@@ -10,14 +10,14 @@ export default function Message(props) {
         props.message.participant === props.participant ? (
             <div key={props.index} className="sended-message-container">
                 <div className="sended-message">
-                    <p className="message-details">{date.getDay() - 1}/{date.getMonth() + 1}/{date.getFullYear()} - <b>{props.message.participantName}</b> - {date.getHours()}:{date.getMinutes()}</p>
+                    <p className="message-details">{date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()} - <b>{props.message.participantName}</b> - {date.getHours()}:{date.getMinutes()}</p>
                     <p>{props.message.text}</p>
                 </div>
             </div>
         ) : (
                 <div key={props.index} className="received-message-container">
                     <div className="received-message">
-                    <p className="message-details">{date.getDay() - 1}/{date.getMonth() + 1}/{date.getFullYear()} - <b>{props.message.participantName}</b> - {date.getHours()}:{date.getMinutes()}</p>
+                    <p className="message-details">{date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()} - <b>{props.message.participantName}</b> - {date.getHours()}:{date.getMinutes()}</p>
                     <p>{props.message.text}</p>
                     </div>
                 </div>

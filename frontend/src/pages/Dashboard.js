@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import useForceUpdate from 'use-force-update';
+import React, { useEffect, useState } from 'react';
 
 import api from '../services/api';
 
@@ -18,6 +17,8 @@ export default function Dashboard({ location, history }) {
     const [admin, setAdmin] = useState('');
     const [adminName, setAdminName] = useState('');
     const [switched, setSwitched] = useState('');
+    const [dateInput, setDateInput] = useState('');
+    const [nameInput, setNameInput] = useState('');
 
     useEffect(() => {
         if (!location.state) {
@@ -48,6 +49,27 @@ export default function Dashboard({ location, history }) {
         setSwitched(switched ? false : true);
     }
 
+    async function handleDateFilter() {
+        if (dateInput) {
+            const response = await api.get('/message/dateFilter', { params: { date: dateInput } });
+            setMessages(response.data);
+        }
+    }
+
+    async function handleNameFilter() {
+        if (nameInput) {
+            const response = await api.get('/message/nameFilter', { params: { name: nameInput } });
+            setMessages(response.data);
+        }
+    }
+
+    async function handleDelete(id) {
+        if (window.confirm('Você realmente quer deletar essa mensagem?')) {
+            const response = await api.delete('message', { params: { id }});
+            setMessages(response.data);
+        }
+    }
+
     return (
         <>
             <div className="dashboard-bar">
@@ -56,29 +78,31 @@ export default function Dashboard({ location, history }) {
             </div>
             <div className="dashboard-container">
                 <aside className="dashboard-panel">
-                    <div className="panel-item" onClick={handleSwitchOrder}>
-                        <div className="panel-item-icon">
+                    <div className="panel-item">
+                        <div className="panel-item-icon" onClick={handleSwitchOrder}>
                             <img src={SwitchIcon} alt="switchIcon" />
                         </div>
                         <label>Inverter listagem</label>
                     </div>
                     <div className="panel-item">
-                        <div className="panel-item-icon">
+                        <div className="panel-item-icon" onClick={handleNameFilter}>
                             <img src={SearchIcon} alt="searchIcon" />
                         </div>
-                        <label>Filtrar por username</label>
+                        <label>Filtrar por username:</label>
+                        <input type="text" value={nameInput} onChange={e => setNameInput(e.target.value)} />
                     </div>
                     <div className="panel-item">
-                        <div className="panel-item-icon">
+                        <div className="panel-item-icon" onClick={handleDateFilter}>
                             <img src={DateIcon} alt="dateIcon" />
                         </div>
-                        <label>Filtrar por data</label>
+                        <label>Filtrar por data:</label>
+                        <input type="date" value={dateInput} onChange={e => setDateInput(e.target.value)} />
                     </div>
                 </aside>
                 <div id="messages-container" className="messages-container">
                     {messages.map((message, index) => {
                         return ([
-                            <button type="button" className="message-delete">
+                            <button type="button" className="message-delete" onClick={() => handleDelete(message._id)}>
                                 <label>Excluir</label>
                             </button>,
                             <Message index={index} message={message} admin={admin} />

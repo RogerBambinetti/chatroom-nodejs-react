@@ -32,12 +32,11 @@ export default function Chat({ location, history }) {
 
     useEffect(() => {
         socket.on('message', message => {
-            console.log('passoy');
             setMessages(messages => [...messages, message]);
             window.scrollTo(0, document.body.scrollHeight);
         });
-
-    },[]);
+        // eslint-disable-next-line
+    }, []);
 
     useEffect(() => {
         async function loadMessages() {
@@ -47,7 +46,7 @@ export default function Chat({ location, history }) {
         }
 
         loadMessages();
-    },[]);
+    }, []);
 
     function handleInput(e) {
         e.preventDefault();

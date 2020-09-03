@@ -20,6 +20,10 @@ routes.post('/participantLogin', ParticipantLoginController.login);
 routes.post('/message', MessageController.store);
 //rota listagem de mensagens
 routes.get('/message', MessageController.index);
+//rota listagem de mensagens por data
+routes.get('/message/dateFilter', MessageController.indexByDate);
+//rota listagem de mensagens por username
+routes.get('/message/nameFilter', MessageController.indexByName);
 //rota exclusão de mensagem
 routes.delete('/message', MessageController.delete);
 
