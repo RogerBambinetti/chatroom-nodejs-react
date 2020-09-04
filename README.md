@@ -7,10 +7,6 @@
 	Chatroom - NodeJS - ReactJS
 </h3>
 
-## Visão geral
-
-**Este projeto foi desenvolvido para fins de aprendizagem.** 4 telas estão disponíveis, divididas entre o sistema web e mobile.
-
 ## Execução do projeto
 
 Em primeiro lugar, certifique-se de que o NodeJS(v12.18.3) e Node Package Manager (npm) estão instalados em sua máquina. Feito isso, siga os seguintes passos:
