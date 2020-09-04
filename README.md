@@ -2,12 +2,6 @@
 	Chatroom - NodeJS - ReactJS
 </h3>
 
-<p align="center">
-<img
-		width="700"
-		src="https://github.com/RogerBambinetti/live-chat-nodejs/blob/master/preview/Screenshot0.png">
-</p>
-
 ## Visão geral
 
 **Este projeto foi desenvolvido para fins de aprendizagem.** 4 telas estão disponíveis, divididas entre o sistema web e mobile.
@@ -34,37 +28,17 @@ A aplicação web possui 4 rotas, sendo elas:
 
 O banco de dados possui 3 participantes cadastrados que podem ser utilizados para login:
 
-Participante 1: 
+|       Participante 1      |      Participante 2      |      Participante 3      |
+| ------------------------- | ------------------------ | ------------------------ |
+|  username: Participante1  |  username: Participante2 | username: Participante2  |
+|  senha: participante1     |  senha: participante2    | senha: participante2     |
 
-username: Participante1 
-senha: participante1
+O banco de dados possui 1 administrador cadastrado que pode ser utilizado para login:
 
-Participante 2: 
-
-username: Participante2 
-senha: participante2
-
-Participante 3: 
-
-username: Participante3
-senha: participante3
-
-O banco de dados possui 1 administrador cadastrado que podem ser utilizado para login:
-
-Administrador 1:
-
-username: Admin
-senha: admin
-
-## Telas
-
-<p align="center">
-<img
-		width="350"
-		src="https://github.com/RogerBambinetti/live-chat-nodejs/blob/master/preview/Screenshot1.png">
-
-</p>
-
+| Admin 1  	    |
+| ----------------- |
+|  username: Admin  |
+|  senha: admin     |
 
 ## Contribuidores
 
