@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import api from '../services/api';
 
+import AdminLogo from '../assets/adminLogo.png';
+
 import './AdminLogin.css';
 
 export default function AdminLogin({ history }) {
@@ -23,7 +25,7 @@ export default function AdminLogin({ history }) {
     return (
         <div className="login-container">
             <form action="">
-                <h2>Admin</h2>
+                <img src={AdminLogo} alt="logo" />
                 <label htmlFor="">Username</label>
                 <input type="text" name="name" id="name" value={name} onChange={e => setName(e.target.value)} />
                 <label htmlFor="">Senha</label>

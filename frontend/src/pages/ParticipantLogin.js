@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 
 import api from '../services/api';
 
+import ParticipantLogo from '../assets/participantLogo.png';
+
 import './ParticipantLogin.css';
+
 
 export default function ParticipantLogin({ history }) {
 
@@ -23,7 +26,7 @@ export default function ParticipantLogin({ history }) {
     return (
         <div className="login-container">
             <form action="">
-                <h2>Participante</h2>
+                <img src={ParticipantLogo} alt="logo" />
                 <label htmlFor="">Username</label>
                 <input type="text" name="name" id="name" value={name} onChange={e => setName(e.target.value)} />
                 <label htmlFor="">Senha</label>
