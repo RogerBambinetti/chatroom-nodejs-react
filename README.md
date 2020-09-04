@@ -39,7 +39,7 @@ O banco de dados possui 3 participantes cadastrados que podem ser utilizados par
 |  username: Participante1  |  username: Participante2 | username: Participante2  |
 |  senha: participante1     |  senha: participante2    | senha: participante2     |
 
-O banco de dados possui 1 administrador cadastrado que podem ser utilizado para login:
+O banco de dados possui 1 administrador cadastrado que pode ser utilizado para login:
 
 | Admin 1  	    |
 | ----------------- |
