@@ -1,10 +1,10 @@
 <h1 align="center">
 <img
 		width="200"
-		src="https://github.com/RogerBambinetti/chatroom-desafio-formare-tech-nodejs-reactjs/blob/master/preview/logo.png">
+		src="https://github.com/RogerBambinetti/chatroom-desafio-formare-tech-nodejs-react/blob/master/preview/logo.png">
 </h1>
 <h3 align="center">
-	Chatroom - NodeJS - ReactJS
+	Chatroom - NodeJS - React
 </h3>
 
 ## Execução do projeto
